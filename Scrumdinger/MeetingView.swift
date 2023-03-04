@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Scumdinger
-//
-//  Created by Lee Sean Jin on 4/3/23.
-//
-
 import SwiftUI
 
 struct MeetingView: View {
@@ -24,12 +17,20 @@ struct MeetingView: View {
                     Label("600", systemImage: "hourglass.tophalf.fill")
                 }
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Time remaining")
+            .accessibilityValue("10 minutes")
             Circle()
                 .strokeBorder(lineWidth: 24)
             HStack {
                 Text("Speaker 1 of 3")
+                Spacer()
+                Button(action: {}) {
+                    Image(systemName: "forward.fill")
+                }.accessibilityLabel("Next speaker")
             }
         }
+        .padding()
     }
 }
 
